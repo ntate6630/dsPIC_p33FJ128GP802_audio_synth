@@ -1,0 +1,23 @@
+# MPLAB IDE generated this makefile for use with GNU make.
+# Project: Project 3.mcp
+# Date: Sat Feb 18 23:28:25 2012
+
+AS = pic30-as.exe
+CC = pic30-gcc.exe
+LD = pic30-ld.exe
+AR = pic30-ar.exe
+HX = pic30-bin2hex.exe
+RM = rm
+
+Project\ 3.hex : Project\ 3.cof
+	$(HX) "Project 3.cof"
+
+Project\ 3.cof : Project\ 3.o
+	$(CC) -mcpu=33FJ128GP802 "Project 3.o" -o"Project 3.cof" -Wl,-Tp33FJ128GP802.gld,--defsym=__MPLAB_BUILD=1,-Map="Project 3.map",--report-mem
+
+Project\ 3.o : ../../../../program\ files\ (x86)/microchip/mplab\ c30/include/math.h ../../../../program\ files\ (x86)/microchip/mplab\ c30/include/stddef.h ../../../../program\ files\ (x86)/microchip/mplab\ c30/include/stdlib.h ../../../../program\ files\ (x86)/microchip/mplab\ c30/support/generic/h/dsp.h ../../../../program\ files\ (x86)/microchip/mplab\ c30/support/dsPIC33F/h/p33FJ128GP802.h ../../../../program\ files\ (x86)/microchip/mplab\ c30/support/dsPIC33F/h/p33fxxxx.h Project\ 3.c
+	$(CC) -mcpu=33FJ128GP802 -x c -c "Project 3.c" -o"Project 3.o" -g -Wall
+
+clean : 
+	$(RM) "Project 3.o" "Project 3.cof" "Project 3.hex"
+
